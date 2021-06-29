@@ -1,18 +1,23 @@
 <template>
     <div class="product">
         <div class="product__info">
-            <p class="product__title">Item 1</p>
-            <p class="product__price">Price 1</p>
+            <p class="product__title">{{block.title}}</p>
+            <p class="product__price">{{block.price}}</p>
+
             <div class="product__rating">
-                <p>3.5</p>
+                <p>{{block.rate}}</p>
             </div>
         </div>
-        <img src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg" alt="image"/>
+        <img :src="block.imageLink" alt="image"/>
         <button class="">Add to cart</button>
     </div>
 </template>
 <script>
-export default {}
+export default {
+    props:{
+        block: Object
+    }
+}
 </script>
 <style scoped>
 .product__title{
